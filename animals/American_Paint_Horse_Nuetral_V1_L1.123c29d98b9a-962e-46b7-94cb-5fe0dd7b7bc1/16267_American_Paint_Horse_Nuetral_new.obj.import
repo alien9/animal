@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/16267_American_Paint_Horse_Nuetral_new.obj-4f5efce7184c0ca51cafc150c1a3533c.mesh"
+
+[deps]
+
+files=[ "res://.import/16267_American_Paint_Horse_Nuetral_new.obj-4f5efce7184c0ca51cafc150c1a3533c.mesh" ]
+
+source_file="res://animals/American_Paint_Horse_Nuetral_V1_L1.123c29d98b9a-962e-46b7-94cb-5fe0dd7b7bc1/16267_American_Paint_Horse_Nuetral_new.obj"
+dest_files=[ "res://.import/16267_American_Paint_Horse_Nuetral_new.obj-4f5efce7184c0ca51cafc150c1a3533c.mesh", "res://.import/16267_American_Paint_Horse_Nuetral_new.obj-4f5efce7184c0ca51cafc150c1a3533c.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
