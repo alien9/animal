@@ -1,19 +1,21 @@
 [remap]
 
 importer="wavefront_obj"
+importer_version=1
 type="Mesh"
-path="res://.import/12222_Cat_v1_l3.obj-61143dc480e6999df40eb0d468c753fa.mesh"
+uid="uid://bk542rjburu21"
+path="res://.godot/imported/12222_Cat_v1_l3.obj-61143dc480e6999df40eb0d468c753fa.mesh"
 
 [deps]
 
-files=[ "res://.import/12222_Cat_v1_l3.obj-61143dc480e6999df40eb0d468c753fa.mesh" ]
+files=["res://.godot/imported/12222_Cat_v1_l3.obj-61143dc480e6999df40eb0d468c753fa.mesh"]
 
 source_file="res://animals/12222_Cat_v1_l3.obj"
-dest_files=[ "res://.import/12222_Cat_v1_l3.obj-61143dc480e6999df40eb0d468c753fa.mesh", "res://.import/12222_Cat_v1_l3.obj-61143dc480e6999df40eb0d468c753fa.mesh" ]
+dest_files=["res://.godot/imported/12222_Cat_v1_l3.obj-61143dc480e6999df40eb0d468c753fa.mesh", "res://.godot/imported/12222_Cat_v1_l3.obj-61143dc480e6999df40eb0d468c753fa.mesh"]
 
 [params]
 
 generate_tangents=true
-scale_mesh=Vector3( 1, 1, 1 )
-offset_mesh=Vector3( 0, 0, 0 )
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
 optimize_mesh=true

@@ -1,22 +1,22 @@
 extends Node
 
 # The URL we will connect to
-export var websocket_url = "ws://localhost:8000"
+@export var websocket_url = "ws://localhost:8000"
 
 # Our WebSocketClient instance
 var _client = WebSocketClient.new()
 
 func _ready():
 	# Connect base signals to get notified of connection open, close, and errors.
-	_client.connect("connection_closed", self, "_closed")
-	_client.connect("connection_error", self, "_closed")
-	_client.connect("connection_established", self, "_connected")
-	_client.connect("server_close_request", self, "ws_close_request")
+	_client.connect("connection_closed",Callable(self,"_closed"))
+	_client.connect("connection_error",Callable(self,"_closed"))
+	_client.connect("connection_established",Callable(self,"_connected"))
+	_client.connect("server_close_request",Callable(self,"ws_close_request"))
 
 	# This signal is emitted when not using the Multiplayer API every time
 	# a full packet is received.
 	# Alternatively, you could check get_peer(1).get_available_packets() in a loop.
-	_client.connect("data_received", self, "_on_data")
+	_client.connect("data_received",Callable(self,"_on_data"))
 
 	# Initiate connection to the given URL.
 	var err = _client.connect_to_url(websocket_url)
@@ -40,7 +40,7 @@ func _connected(proto = ""):
 	print("Connected with protocol: ", proto)
 	# You MUST always use get_peer(1).put_packet to send data to server,
 	# and not put_packet directly when not using the MultiplayerAPI.
-	_client.get_peer(1).put_packet("Test packet".to_utf8())
+	_client.get_peer(1).put_packet("Test packet".to_utf8_buffer())
 
 func _on_data():
 	# Print the received packet, you MUST always use get_peer(1).get_packet
@@ -61,7 +61,7 @@ func _process(delta):
 
 
 func _on_Area_input_event(camera, event, click_position, click_normal, shape_idx):
-	if event is InputEventMouseButton and event.pressed==true:
+	if event is InputEventMouseButton and event.button_pressed==true:
 		var err = _client.connect_to_url(websocket_url)
 		if err != OK:
 			print("Unable to connect. Err ", err)
@@ -69,6 +69,6 @@ func _on_Area_input_event(camera, event, click_position, click_normal, shape_idx
 		
 
 func _on_Elephant_input_event(camera, event, click_position, click_normal, shape_idx):
-	if event is InputEventMouseButton and event.pressed==true:
-		_client.get_peer(1).put_packet("vintao no elefante".to_utf8())
+	if event is InputEventMouseButton and event.button_pressed==true:
+		_client.get_peer(1).put_packet("vintao no elefante".to_utf8_buffer())
 

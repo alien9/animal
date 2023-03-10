@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://boyviekrk8vgh"]
+
+[ext_resource type="Environment" uid="uid://c34ygdl8oe4ug" path="res://default_env.tres" id="1_1ae88"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3evpn"]
+size = Vector3(100, 0.1, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fw3i1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_f5dh5"]
+material = SubResource("StandardMaterial3D_fw3i1")
+size = Vector3(100, 0.1, 100)
+
+[sub_resource type="Environment" id="Environment_3arg4"]
+background_mode = 2
+ambient_light_color = Color(0, 0.988235, 0.996078, 1)
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_dg3cs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x82tj"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_3evpn")
+
+[node name="Area3D" type="Area3D" parent="CollisionShape3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("BoxMesh_f5dh5")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 94.0003, 0)
+omni_range = 150.771
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.91799, 13.0657)
+environment = SubResource("Environment_3arg4")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_1ae88")
+camera_attributes = SubResource("CameraAttributesPractical_dg3cs")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.2775, 0)
+radius = 4.0
+material = SubResource("StandardMaterial3D_x82tj")
